@@ -50,12 +50,15 @@ function SocialLink({ href, name, Icon, external }: LinkType) {
   );
 }
 
-function FooterSection({ title, links }: FooterSection) {
+function FooterSection({ title, links, Icon }: FooterSection) {
   return (
     <div>
-      <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-        {title}
-      </h2>
+      {Icon && <Icon className="h-7 w-7 md:h-9 md:w-9 mb-4" />}
+      {title && (
+        <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+          {title}
+        </h2>
+      )}
       {links && (
         <ul className="text-gray-500 dark:text-gray-400 font-medium">
           {links.map(({ name, href, Icon }) => (

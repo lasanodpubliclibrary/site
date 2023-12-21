@@ -35,7 +35,7 @@ export const marketingConfig: MarketingConfig = {
   footer: {
     sections: [
       {
-        title: siteConfig.shortName,
+        Icon: siteConfig.Icon,
         links: [
           {
             name: "About Us",

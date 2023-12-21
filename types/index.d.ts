@@ -1,3 +1,4 @@
+import { Icon } from ".";
 import { CustomIcon, Icon } from "@/components/Icons";
 
 interface Link {
@@ -9,7 +10,8 @@ interface Link {
 }
 
 interface FooterSection {
-  title: string;
+  Icon?: Icon;
+  title?: string;
   links: Link[];
 }
 
