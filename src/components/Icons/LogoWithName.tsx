@@ -26,10 +26,7 @@ export default function LogoWithName({
   return (
     <Link
       href={href ?? "/"}
-      className={cn(
-        "w-fit md:custom-h-full flex items-center gap-3 ",
-        classes?.root
-      )}
+      className={cn("w-fit flex items-center gap-3 ", classes?.root)}
     >
       {showLogo && (
         <div className={cn("flex items-center", classes?.logo)}>

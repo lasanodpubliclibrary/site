@@ -1,9 +1,8 @@
 import { siteConfig } from "@/config/site";
 import Link from "next/link";
 import { FooterSection, Link as LinkType } from "types";
-import { buttonVariants } from "../ui/button";
-import { cn } from "@/lib/utils";
 import { marketingConfig } from "../../config/marketing";
+import { buttonVariants } from "../ui/button";
 
 export default function Footer() {
   if (!marketingConfig?.footer) return null;
@@ -18,13 +17,13 @@ export default function Footer() {
             ))}
           </div>
         )}
-        <div className="px-4 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+        <div className="px-4 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
           <span className="text-sm text-muted-foreground sm:text-center">
             © {marketingConfig?.footer?.copyYears} &nbsp; - &nbsp;
             <Link href={siteConfig.url}>{siteConfig.name}</Link>. All Rights
             Reserved.
           </span>
-          <ul className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
+          <ul className="flex justify-center flex-wrap mt-4  md:mt-0 gap-5 rtl:space-x-reverse">
             {siteConfig.links.map(({ name, href, Icon }) => (
               <li key={name}>
                 <SocialLink href={href} name={name} Icon={Icon} />
@@ -53,7 +52,7 @@ function SocialLink({ href, name, Icon, external }: LinkType) {
 function FooterSection({ title, links, Icon }: FooterSection) {
   return (
     <div>
-      {Icon && <Icon className="h-7 w-7 md:h-9 md:w-9 mb-4" />}
+      {Icon && <Icon className="h-8 w-8 md:h-10 md:w-10 mb-4" />}
       {title && (
         <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
           {title}
