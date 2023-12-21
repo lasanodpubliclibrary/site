@@ -64,7 +64,9 @@ export default function MainNav({ items, children }: MainNavProps) {
         {showMobileMenu ? <Close /> : <Menu />}
       </Button>
       {showMobileMenu && items && (
-        <DynamicMobileNav items={items}>{children}</DynamicMobileNav>
+        <DynamicMobileNav items={items} handleClose={handleClose}>
+          {children}
+        </DynamicMobileNav>
       )}
     </div>
   );
