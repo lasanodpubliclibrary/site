@@ -42,6 +42,7 @@ function SocialLink({ href, name, Icon, external }: LinkType) {
       href={href}
       className={buttonVariants({ variant: "outline", size: "icon" })}
       target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
     >
       {Icon && <Icon className="h-4 w-4 md:h-6 md:w-6" />}
       <span className="sr-only">{name}</span>
@@ -61,7 +62,8 @@ function FooterSection({ title, links, Icon }: FooterSection) {
       {links && (
         <ul className="text-gray-500 dark:text-gray-400 font-medium">
           {links.map(({ name, href, Icon }) => (
-            <li key={href} className="mb-4">
+            <li key={href} className="mb-2 flex gap-1">
+              {Icon && <Icon />}
               <Link href={href} className={" hover:underline"}>
                 {name}
               </Link>
