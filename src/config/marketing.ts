@@ -16,8 +16,16 @@ export const marketingConfig: MarketingConfig = {
       href: "/events",
     },
     {
+      title: "Books",
+      href: "/books",
+    },
+    {
       title: "Catalog",
       href: "/catalog",
+    },
+    {
+      title: "Writers",
+      href: "/writers",
     },
     {
       title: "Blog",
