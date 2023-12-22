@@ -11,12 +11,12 @@ import { cn } from "@/lib/utils";
 import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -37,7 +37,6 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
-  metadataBase: new URL(siteConfig.url),
   generator: "Next.js",
   applicationName: siteConfig.name,
   referrer: "origin-when-cross-origin",
