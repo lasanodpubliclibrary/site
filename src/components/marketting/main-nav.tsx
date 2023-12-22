@@ -9,7 +9,7 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { MainNavItem } from "types";
 import { Close, Menu } from "../Icons";
-import LogoWithName from "../Icons/LogoWithName";
+import LogoWithName from "../shared/LogoWithName";
 import { Button } from "../ui/button";
 
 const DynamicMobileNav = dynamic(
