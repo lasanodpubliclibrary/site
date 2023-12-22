@@ -36,7 +36,7 @@ export default function MainNav({ items, children }: MainNavProps) {
     <div className="w-full flex flex-wrap items-center justify-between gap-6 ">
       <LogoWithName name={siteConfig.name} Logo={siteConfig.Icon} />
       {items?.length ? (
-        <nav className="hidden w-fit gap-7 md:flex flex-1 items-center justify-center">
+        <nav className="hidden gap-7 md:flex  items-center justify-center">
           {items?.map((item, index) => (
             <Link
               key={index}
