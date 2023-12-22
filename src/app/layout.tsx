@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import { inter } from "@/app/ui/fonts";
+import { fontHeading, inter } from "@/app/ui/fonts";
 import { siteConfig } from "@/config/site";
 
 import { TailwindIndicator } from "@/components/marketting/tailwindcss-inficator";
@@ -66,11 +66,17 @@ export const viewport: Viewport = {
 interface RootLayoutProps {
   children: React.ReactNode;
 }
-
+// suppressHydrationWarning;
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className={cn(inter.className)}>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          inter.variable,
+          fontHeading.variable
+        )}
+      >
         <main className="relative w-full min-h-screen">
           {children}
           <TailwindIndicator />
