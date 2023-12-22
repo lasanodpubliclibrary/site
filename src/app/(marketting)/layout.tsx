@@ -1,5 +1,5 @@
-import SiteFooter from "@/components/marketting/footer";
-import Header from "@/components/marketting/header";
+import SiteFooter from "@/components/marketing/footer";
+import Header from "@/components/marketing/header";
 
 interface MarketingLayoutProps {
   children: React.ReactNode;
@@ -9,10 +9,10 @@ export default async function MarketingLayout({
   children,
 }: MarketingLayoutProps) {
   return (
-    <div className="bg-background">
+    <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="min-h-[calc(100vh-5rem)]">{children}</main>
-      <SiteFooter />
+      <main className="flex-1">{children}</main>
+      {/* <SiteFooter /> */}
     </div>
   );
 }

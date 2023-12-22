@@ -6,9 +6,10 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { fontHeading, inter } from "@/app/ui/fonts";
 import { siteConfig } from "@/config/site";
 
-import { TailwindIndicator } from "@/components/marketting/tailwindcss-inficator";
+import { TailwindIndicator } from "@/components/marketing/tailwindcss-inficator";
 import { cn } from "@/lib/utils";
 import type { Metadata, Viewport } from "next";
+import { ThemeProvider } from "@/components/shared/theme-provider";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -66,10 +67,10 @@ export const viewport: Viewport = {
 interface RootLayoutProps {
   children: React.ReactNode;
 }
-// suppressHydrationWarning;
+
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
@@ -78,7 +79,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <main className="relative w-full min-h-screen">
-          {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
           <TailwindIndicator />
           <Analytics />
           <SpeedInsights />

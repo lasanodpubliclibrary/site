@@ -11,9 +11,10 @@ import { MainNavItem } from "types";
 import { Close, Menu } from "../Icons";
 import LogoWithName from "../shared/LogoWithName";
 import { Button } from "../ui/button";
+import { ModeToggle } from "../shared/mode-toggle";
 
 const DynamicMobileNav = dynamic(
-  () => import("@/components/marketting/mobile-nav"),
+  () => import("@/components/marketing/mobile-nav"),
   {
     ssr: false,
   }
@@ -33,10 +34,10 @@ export default function MainNav({ items, children }: MainNavProps) {
   }, [setShowMobileMenu]);
 
   return (
-    <div className="w-full flex flex-wrap items-center justify-between gap-6 ">
+    <div className="w-full flex flex-wrap items-center justify-between  gap-6 ">
       <LogoWithName name={siteConfig.name} Logo={siteConfig.Icon} />
       {items?.length ? (
-        <nav className="hidden gap-7 md:flex  items-center justify-center">
+        <nav className="hidden gap-7 md:flex flex-1  items-center justify-center">
           {items?.map((item, index) => (
             <Link
               key={index}
@@ -54,15 +55,18 @@ export default function MainNav({ items, children }: MainNavProps) {
           ))}
         </nav>
       ) : null}
-      <Button
-        variant="outline"
-        className="flex items-center space-x-2 md:hidden"
-        onClick={() => setShowMobileMenu(!showMobileMenu)}
-        size="icon"
-        aria-label="Toggle mobile menu"
-      >
-        {showMobileMenu ? <Close /> : <Menu />}
-      </Button>
+      <div className="flex gap-2 md:hidden">
+        <ModeToggle />
+        <Button
+          variant="outline"
+          className="flex items-center space-x-2 md:hidden"
+          onClick={() => setShowMobileMenu(!showMobileMenu)}
+          size="icon"
+          aria-label="Toggle mobile menu"
+        >
+          {showMobileMenu ? <Close /> : <Menu />}
+        </Button>
+      </div>
       {showMobileMenu && items && (
         <DynamicMobileNav items={items} handleClose={handleClose}>
           {children}
