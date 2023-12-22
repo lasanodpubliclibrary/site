@@ -25,8 +25,8 @@ export const siteConfig: SiteConfig = {
   shortName,
   description:
     "Las Anod Public Library is your gateway to books, blogs, community discussions, and a marketplace for new or used books. Explore and join us today!",
-  url: "https://www.laaascaanood.co",
-  ogImage: "https://www.laaascaanood.co/og.png",
+  url: "https://www.laascaanood.co",
+  ogImage: "https://www.laaascaanood.co/opengraph.png",
   Icon: Logo,
   links: [
     {
