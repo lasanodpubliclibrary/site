@@ -55,9 +55,9 @@ function FooterSection({ title, links, Icon }: FooterSection) {
     <div>
       {Icon && <Icon className="h-8 w-8 md:h-10 md:w-10 mb-4" />}
       {title && (
-        <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+        <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
           {title}
-        </h2>
+        </h3>
       )}
       {links && (
         <ul className="text-gray-500 dark:text-gray-400 font-medium">

@@ -33,7 +33,7 @@ export default function LogoWithName({
           {Logo && <Logo />}
         </div>
       )}
-      {showName && <h3 className={cn("font-bold", classes?.name)}>{name}</h3>}
+      {showName && <h2 className={cn("font-bold", classes?.name)}>{name}</h2>}
     </Link>
   );
 }
