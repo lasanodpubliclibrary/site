@@ -59,7 +59,7 @@
 }
 
 @layer utilities {
-  .custom-h-full {
+  .h-screen-dvh {
     height: 100vh;
     height: 100dvh;
   }

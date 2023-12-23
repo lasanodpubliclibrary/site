@@ -5,13 +5,15 @@ import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
 import * as React from "react";
 
+import { Drawer } from "vaul";
+
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { MainNavItem } from "types";
-import { Close, Menu } from "../Icons";
+import { Close, Heart, Menu } from "../Icons";
 import LogoWithName from "../shared/LogoWithName";
-import { Button } from "../ui/button";
 import { ModeToggle } from "../shared/mode-toggle";
+import { Button, buttonVariants } from "../ui/button";
 
 const DynamicMobileNav = dynamic(
   () => import("@/components/marketing/mobile-nav"),
@@ -56,6 +58,59 @@ export default function MainNav({ items, children }: MainNavProps) {
         </nav>
       ) : null}
       <div className="flex gap-2 md:hidden">
+        <Drawer.Root shouldScaleBackground>
+          <Drawer.Trigger asChild>
+            <Button variant="outline" size="icon">
+              <Heart className="h-[1.2rem] w-[1.2rem]" />
+            </Button>
+          </Drawer.Trigger>
+          <Drawer.Portal>
+            <Drawer.Overlay className="fixed inset-0 bg-black/40" />
+            <Drawer.Content className="bg-card shadow-sm border flex flex-col rounded-t-[10px] h-full mt-24 max-h-[96%] fixed bottom-0 left-0 right-0 px-7">
+              <div className="p-4 bg-card rounded-t-[10px] flex-1">
+                <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-accent mb-8 bg-slate-300 dark:bg-slate-600" />
+                <div className="max-w-md mx-auto">
+                  <div className="w-full flex flex-col items-center m-0 mb-4 ">
+                    <div
+                      aria-hidden
+                      className="p-5 flex items-center justify-center bg-primary/10  rounded-full"
+                    >
+                      <Heart className="h-8 w-8" />
+                    </div>
+                    <Drawer.Title className="text-2xl font-heading  tracking-tight">
+                      Support Your Library
+                    </Drawer.Title>
+                  </div>
+                  <div className="mt-6 flex flex-col gap-3 mb-6">
+                    <p className="leading-normal">
+                      As a valued supporter of the {siteConfig.name}, your
+                      donation plays a crucial role in enhancing our services
+                      and enriching the community. Your generosity enables us to
+                      acquire new books, improve facilities, and host engaging
+                      programs for all.
+                    </p>
+                    <p className="leading-normal">
+                      Every contribution, no matter the size, contributes to the
+                      growth and vitality of our library. Join us in shaping a
+                      brighter future for knowledge and community enrichment.
+                    </p>
+                    <p className="leading-normal">
+                      Click &apos;<span className="font-itslic">Continue</span>
+                      &apos; to make a difference today
+                    </p>
+                  </div>
+                  <Link
+                    href="#"
+                    className={cn(buttonVariants(), "w-full uppercase")}
+                  >
+                    Continue to Donate
+                  </Link>
+                </div>
+              </div>
+            </Drawer.Content>
+          </Drawer.Portal>
+        </Drawer.Root>
+
         <ModeToggle />
         <Button
           variant="outline"
@@ -64,7 +119,11 @@ export default function MainNav({ items, children }: MainNavProps) {
           size="icon"
           aria-label="Toggle mobile menu"
         >
-          {showMobileMenu ? <Close /> : <Menu />}
+          {showMobileMenu ? (
+            <Close className="h-[1.2rem] w-[1.2rem]" />
+          ) : (
+            <Menu className="h-[1.2rem] w-[1.2rem]" />
+          )}
         </Button>
       </div>
       {showMobileMenu && items && (

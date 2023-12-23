@@ -10,34 +10,42 @@ export const marketingConfig: MarketingConfig = {
     {
       title: "Search",
       href: "/search",
+      disabled: true,
     },
     {
       title: "Events",
       href: "/events",
+      disabled: true,
     },
     {
       title: "Books",
       href: "/books",
+      disabled: true,
     },
     {
       title: "Catalog",
       href: "/catalog",
+      disabled: true,
     },
     {
       title: "Writers",
       href: "/writers",
+      disabled: true,
     },
     {
       title: "Blog",
       href: "/blog",
+      disabled: true,
     },
     {
       title: "About Us",
       href: "/about-us",
+      disabled: true,
     },
     {
       title: "Contact Us",
       href: "/contact-us",
+      disabled: true,
     },
   ],
   footer: {

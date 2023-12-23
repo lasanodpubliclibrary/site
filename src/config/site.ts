@@ -13,16 +13,12 @@ import { SiteConfig } from "types";
 /*
  if you change the name, shortname, url of the site, you must also change it in the following files:
 
-    /public/site.webmanifest
     env variables: NEXTAUTH_URL, NEXT_PUBLIC_SITE_URL
 */
 
-const name = "Las Anod Public Library";
-const shortName = "LAPL";
-
 export const siteConfig: SiteConfig = {
-  name,
-  shortName,
+  name: "Las Anod Public Library",
+  shortName: "LAPL",
   description:
     "Las Anod Public Library is your gateway to books, blogs, community discussions, and a marketplace for new or used books. Explore and join us today!",
   url: "https://www.laascaanood.co",
