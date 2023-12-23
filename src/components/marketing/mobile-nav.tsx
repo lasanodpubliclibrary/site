@@ -4,6 +4,7 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 import { MainNavItem } from "types";
+import { ModeToggle } from "../shared/mode-toggle";
 
 interface MobileNavProps {
   items: MainNavItem[];
@@ -22,7 +23,8 @@ const MobileNav = ({ items, handleClose, children }: MobileNavProps) => {
     >
       <div className="relative z-20 grid gap-6 rounded-md bg-popover p-4 text-popover-foreground shadow-md animate-in slide-in-from-bottom-80">
         <div className=" flex gap-3  justify-between items-start ">
-          <span className="font-semibold">Menu</span>
+          <span className="font-semibold px-2">Menu</span>
+          <ModeToggle />
         </div>
         <nav className="grid grid-flow-row auto-rows-max text-sm">
           {items.map((item, index) => (
