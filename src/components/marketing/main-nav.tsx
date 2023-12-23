@@ -36,7 +36,7 @@ export default function MainNav({ items, children }: MainNavProps) {
   }, [setShowMobileMenu]);
 
   return (
-    <div className="w-full flex flex-wrap items-center justify-between  gap-3 ">
+    <div className="w-full flex flex-wrap items-center justify-between  gap-2 ">
       <LogoWithName name={siteConfig.name} Logo={siteConfig.Icon} />
       {items?.length ? (
         <nav className="hidden gap-7 md:flex flex-1  items-center justify-center">
@@ -57,7 +57,7 @@ export default function MainNav({ items, children }: MainNavProps) {
           ))}
         </nav>
       ) : null}
-      <div className="ml-auto flex gap-2 md:hidden">
+      <div className="flex gap-2 md:hidden">
         <Drawer.Root shouldScaleBackground>
           <Drawer.Trigger asChild>
             <Button variant="outline" size="icon">
@@ -66,7 +66,7 @@ export default function MainNav({ items, children }: MainNavProps) {
           </Drawer.Trigger>
           <Drawer.Portal>
             <Drawer.Overlay className="fixed inset-0 bg-black/40" />
-            <Drawer.Content className="bg-card shadow-sm border  flex flex-col rounded-t-[10px] h-full mt-24 max-h-[87%] fixed bottom-0 left-0 right-0 px-7">
+            <Drawer.Content className="bg-card shadow-sm border  flex flex-col rounded-t-[10px] h-full mt-24 max-h-[96%] fixed bottom-0 left-0 right-0 px-7">
               <div className="p-4 bg-card rounded-t-[10px] flex-1 ">
                 <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-accent mb-8 bg-slate-300 dark:bg-slate-600" />
                 <div className="max-w-md mx-auto flex-1  overflow-auto">
@@ -82,19 +82,19 @@ export default function MainNav({ items, children }: MainNavProps) {
                     </Drawer.Title>
                   </div>
                   <div className="mt-6 flex flex-col gap-3 mb-9">
-                    <p>
+                    <p className="text-sm">
                       As a valued supporter of the {siteConfig.name}, your
                       donation plays a crucial role in enhancing our services
                       and enriching the community. Your generosity enables us to
                       acquire new books, improve facilities, and host engaging
                       programs for all.
                     </p>
-                    <p>
+                    <p className="text-sm">
                       Every contribution, no matter the size, contributes to the
                       growth and vitality of our library. Join us in shaping a
                       brighter future for knowledge and community enrichment.
                     </p>
-                    <p>
+                    <p className="text-sm">
                       Click &apos;<span className="font-itslic">Continue</span>
                       &apos; to make a difference today
                     </p>
