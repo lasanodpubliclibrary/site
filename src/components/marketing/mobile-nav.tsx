@@ -22,7 +22,7 @@ const MobileNav = ({ items, handleClose, children }: MobileNavProps) => {
       )}
     >
       <div className="relative z-20 grid gap-6 rounded-md bg-popover p-4 text-popover-foreground shadow-md animate-in slide-in-from-bottom-80">
-        <div className=" flex gap-3  justify-between items-start ">
+        <div className=" flex gap-3  justify-between items-center ">
           <span className="font-semibold px-2">Menu</span>
           <ModeToggle />
         </div>
