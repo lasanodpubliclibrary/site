@@ -47,7 +47,7 @@ export default function MainNav({ items, children }: MainNavProps) {
               className={cn(
                 "w-fit flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm",
                 item.href.startsWith(`/${segment}`)
-                  ? "text-foreground"
+                  ? "text-[#3bc4f1]"
                   : "text-foreground/60",
                 item.disabled && "cursor-not-allowed opacity-80"
               )}
