@@ -69,8 +69,8 @@ export default function MainNav({ items, children }: MainNavProps) {
             <Drawer.Content className="bg-card shadow-sm border  flex flex-col rounded-t-[10px] h-full mt-24 max-h-[96%] fixed bottom-0 left-0 right-0 px-7">
               <div className="p-4 bg-card rounded-t-[10px] flex-1 ">
                 <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-accent mb-8 bg-slate-300 dark:bg-slate-600" />
-                <div className="max-w-md mx-auto flex-1  overflow-auto">
-                  <div className="w-full flex flex-col items-center m-0 mb-4 ">
+                <div className="max-w-md mx-auto flex-1 flex flex-col gap-7 overflow-auto scrollbar-none">
+                  <div className="w-full flex flex-col gap-5 items-center">
                     <div
                       aria-hidden
                       className="p-5 flex items-center justify-center bg-primary/10  rounded-full"
@@ -81,7 +81,7 @@ export default function MainNav({ items, children }: MainNavProps) {
                       Support Your Library
                     </Drawer.Title>
                   </div>
-                  <div className="mt-6 flex flex-col gap-3 mb-9">
+                  <div className="flex flex-col gap-4">
                     <p className="text-sm">
                       As a valued supporter of the {siteConfig.name}, your
                       donation plays a crucial role in enhancing our services
@@ -95,7 +95,7 @@ export default function MainNav({ items, children }: MainNavProps) {
                       brighter future for knowledge and community enrichment.
                     </p>
                     <p className="text-sm">
-                      Click &apos;<span className="font-itslic">Continue</span>
+                      Click &apos;<span className="italic">Continue</span>
                       &apos; to make a difference today
                     </p>
                   </div>
