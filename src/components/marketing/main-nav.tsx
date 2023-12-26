@@ -67,9 +67,9 @@ export default function MainNav({ items, children }: MainNavProps) {
           <Drawer.Portal>
             <Drawer.Overlay className="fixed inset-0 bg-background/40" />
             <Drawer.Content className="bg-card shadow-sm border  flex flex-col rounded-t-[10px] h-full mt-24 max-h-[90%] fixed bottom-0 left-0 right-0 px-7">
-              <div className="p-4 bg-card rounded-t-[10px] flex-1 ">
+              <div className="p-4 bg-card rounded-t-[10px] flex-1 overflow-auto scrollbar-none">
                 <div className="mx-auto w-11 h-1.5 flex-shrink-0 rounded-full mb-8 bg-slate-300 dark:bg-slate-600" />
-                <div className="max-w-md mx-auto flex-1 flex flex-col gap-5 overflow-auto scrollbar-none">
+                <div className="max-w-md mx-auto flex-1 flex flex-col gap-5">
                   <div className="w-full flex flex-col gap-5 items-center">
                     <div
                       aria-hidden
