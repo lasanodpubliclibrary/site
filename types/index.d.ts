@@ -1,10 +1,9 @@
-import { Icon } from ".";
-import { CustomIcon, Icon } from "@/components/Icons";
+import { Icon } from "@/components/Icons";
 
 interface Link {
   name: string;
   href: string;
-  Icon?: CustomIcon | Icon;
+  Icon?: Icon;
   external?: boolean;
   disabled?: boolean;
 }
@@ -21,7 +20,7 @@ interface SiteConfig {
   description: string;
   url: string;
   ogImage: string;
-  Icon?: CustomIcon | Icon;
+  Icon?: Icon;
   links: Link[];
 }
 
