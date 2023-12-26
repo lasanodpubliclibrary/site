@@ -65,8 +65,8 @@ export default function MainNav({ items, children }: MainNavProps) {
             </Button>
           </Drawer.Trigger>
           <Drawer.Portal>
-            <Drawer.Overlay className="fixed inset-0 bg-black/40" />
-            <Drawer.Content className="bg-card shadow-sm border  flex flex-col rounded-t-[10px] h-full mt-24 max-h-[96%] fixed bottom-0 left-0 right-0 px-7">
+            <Drawer.Overlay className="fixed inset-0 bg-background/40" />
+            <Drawer.Content className="bg-card shadow-sm border  flex flex-col rounded-t-[10px] h-full mt-24 max-h-[90%] fixed bottom-0 left-0 right-0 px-7">
               <div className="p-4 bg-card rounded-t-[10px] flex-1 ">
                 <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-accent mb-8 bg-slate-300 dark:bg-slate-600" />
                 <div className="max-w-md mx-auto flex-1 flex flex-col gap-7 overflow-auto scrollbar-none">
