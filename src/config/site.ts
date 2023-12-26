@@ -35,7 +35,7 @@ export const siteConfig: SiteConfig = {
     postalCode: "00100"
   },
   contacts: {
-   telephone: "+252699992045
+   telephone: "+252699992045"
   },
   links: [
     {
