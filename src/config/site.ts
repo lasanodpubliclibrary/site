@@ -19,6 +19,7 @@ import { SiteConfig } from "types";
 */
 
 export const siteConfig: SiteConfig = {
+  type: "Library",
   name: "Las Anod Public Library",
   shortName: "LAPL",
   description:
@@ -26,6 +27,16 @@ export const siteConfig: SiteConfig = {
   url: "https://www.laascaanood.co",
   ogImage: "https://www.laaascaanood.co/opengraph.png",
   Icon: Logo,
+  address: {
+    street: "F9C5+Q5R, Laascaanood",
+    city: "Laascaanood",
+    region: "Sool",
+    country: "Somalia",
+    postalCode: "00100"
+  },
+  contacts: {
+   telephone: "+252699992045
+  },
   links: [
     {
       name: "Email",
