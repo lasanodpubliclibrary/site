@@ -65,7 +65,7 @@ export default function MainNav({ items, children }: MainNavProps) {
             </Button>
           </Drawer.Trigger>
           <Drawer.Portal>
-            <Drawer.Overlay className="fixed inset-0 bg-background/40" />
+            <Drawer.Overlay className="fixed inset-0 bg-background" />
             <Drawer.Content className="bg-card shadow-sm border  flex flex-col rounded-t-[10px] h-full mt-24 max-h-[90%] fixed bottom-0 left-0 right-0 px-7">
               <div className="px-4 relative rounded-t-[10px] flex-1 overflow-auto scrollbar-none">
                 <div className="sticky py-4 top-0 flex bg-card">
