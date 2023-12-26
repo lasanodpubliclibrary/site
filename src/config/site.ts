@@ -19,7 +19,6 @@ import { SiteConfig } from "types";
 */
 
 export const siteConfig: SiteConfig = {
-  type: "Library",
   name: "Las Anod Public Library",
   shortName: "LAPL",
   description:
@@ -34,7 +33,7 @@ export const siteConfig: SiteConfig = {
     country: "Somalia",
     postalCode: "00100"
   },
-  contacts: {
+  contact: {
    telephone: "+252699992045"
   },
   links: [
