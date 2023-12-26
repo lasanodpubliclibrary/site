@@ -51,23 +51,10 @@ export const siteConfig: SiteConfig = {
       Icon: Instagram,
       external: true,
     },
-
-    {
-      name: "Discord",
-      href: "https://discord.gg/laaascaanood",
-      Icon: Discord,
-      external: true,
-    },
     {
       name: "WhatsApp",
       href: "https://wa.me/252634400000",
       Icon: WhatsApp,
-      external: true,
-    },
-    {
-      name: "GitHub",
-      href: "#",
-      Icon: GitHub,
       external: true,
     },
   ],
