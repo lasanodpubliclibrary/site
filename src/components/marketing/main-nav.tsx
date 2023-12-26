@@ -72,7 +72,7 @@ export default function MainNav({ items, children }: MainNavProps) {
                   <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-slate-300 dark:bg-slate-600" />
                 </div>
                 <div className="max-w-md mx-auto flex-1 flex flex-col gap-5">
-                  <div className="w-full flex flex-col gap-5 items-center">
+                  <div className="w-full flex flex-col gap-4 items-center">
                     <div
                       aria-hidden
                       className="p-5 flex items-center justify-center bg-primary/10  rounded-full"
