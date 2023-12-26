@@ -8,13 +8,27 @@ interface Link {
   disabled?: boolean;
 }
 
+interface Address {
+  street?: string;
+  city?: string;
+  region?: string;
+  postalCode?: string;
+  country?: string;
+}
+
+interface Contact {
+  telephone? string;
+}
+
 interface FooterSection {
   Icon?: Icon;
   title?: string;
   links: Link[];
 }
 
+
 interface SiteConfig {
+  type: string;
   name: string;
   shortName: string;
   description: string;
@@ -22,6 +36,8 @@ interface SiteConfig {
   ogImage: string;
   Icon?: Icon;
   links: Link[];
+  address?: Address;
+  contact?: Contact
 }
 
 type NavItem = {
