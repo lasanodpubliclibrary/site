@@ -60,7 +60,7 @@ export default function MainNav({ items, children }: MainNavProps) {
       <div className="flex gap-2 md:hidden">
         <Drawer.Root shouldScaleBackground>
           <Drawer.Trigger asChild>
-            <Button variant="outline" size="icon">
+            <Button variant="outline" size="icon" aria-label="donate">
               <Heart className="h-[1.2rem] w-[1.2rem]" />
             </Button>
           </Drawer.Trigger>
