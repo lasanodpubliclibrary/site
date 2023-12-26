@@ -28,7 +28,6 @@ interface FooterSection {
 
 
 interface SiteConfig {
-  type: string;
   name: string;
   shortName: string;
   description: string;
