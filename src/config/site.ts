@@ -22,7 +22,7 @@ export const siteConfig: SiteConfig = {
   name: "Las Anod Public Library",
   shortName: "LAPL",
   description:
-    "Discover a literary haven at Las Anod Public Library. Explore books, engage with writers, attend exciting events, delve into insightful blogs, browse our catalog, and even buy or sell old/new books. Your literary journey begins here!",
+    "Explore books, engage with writers, attend events, read insightful blogs, browse our catalog, and buy/sell old/new books at Las Anod Public Library. Your literary journey begins here!",
   url: "https://www.laascaanood.co",
   ogImage: "https://www.laaascaanood.co/opengraph.png",
   Icon: Logo,
