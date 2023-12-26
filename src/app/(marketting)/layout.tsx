@@ -15,7 +15,7 @@ export default async function MarketingLayout({
     >
       <Header />
       <main className="flex-1">{children}</main>
-      {/* <SiteFooter /> */}
+       <SiteFooter /> 
     </div>
   );
 }
