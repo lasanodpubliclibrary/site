@@ -13,7 +13,9 @@ import { SiteConfig } from "types";
 /*
  if you change the name, shortname, url of the site, you must also change it in the following files:
 
-    env variables: NEXTAUTH_URL, NEXT_PUBLIC_SITE_URL
+    1) env variables: NEXTAUTH_URL, NEXT_PUBLIC_SITE_URL
+    2) ./src/app/opengraph.alt.txt
+    3)  ./src/app/twitter-image.alt.txt
 */
 
 export const siteConfig: SiteConfig = {
