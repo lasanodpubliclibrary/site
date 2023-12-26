@@ -20,7 +20,7 @@ export default function Footer() {
         <div className="px-4 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
           <span className="text-sm text-muted-foreground sm:text-center">
             © {marketingConfig?.footer?.copyYears} &nbsp; - &nbsp;
-            <Link href={siteConfig.url}>{siteConfig.name}</Link>. All Rights
+            <Link href="/">{siteConfig.name}</Link>. All Rights
             Reserved.
           </span>
           <ul className="flex justify-center flex-wrap mt-4  md:mt-0 gap-5 rtl:space-x-reverse">
@@ -61,12 +61,22 @@ function FooterSection({ title, links, Icon }: FooterSection) {
       )}
       {links && (
         <ul className="text-gray-500 dark:text-gray-400 font-medium">
-          {links.map(({ name, href, Icon }) => (
-            <li key={href} className="mb-2 flex gap-1">
+          {links.map(({ name, href, Icon, disabled }) => (
+            <li key={href+"-footer"} className="mb-2 flex gap-1">
               {Icon && <Icon />}
-              <Link href={href} className={" hover:underline"}>
+              {
+                disabled && (<span className="text-muted-foreground/90 cursor-not-allowed">
                 {name}
-              </Link>
+              </span>)
+              }
+
+              {
+              !disabled && (
+              <Link href={href} className="hover:underline">
+                {name}
+              </Link>)
+              }
+
             </li>
           ))}
         </ul>
