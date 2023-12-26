@@ -9,15 +9,15 @@ interface Link {
 }
 
 interface Address {
-  street?: string;
-  city?: string;
-  region?: string;
-  postalCode?: string;
-  country?: string;
+  street: string;
+  city: string;
+  region: string;
+  postalCode: string;
+  country: string;
 }
 
 interface Contact {
-  telephone? string;
+  telephone: string;
 }
 
 interface FooterSection {
@@ -35,8 +35,8 @@ interface SiteConfig {
   ogImage: string;
   Icon?: Icon;
   links: Link[];
-  address?: Address;
-  contact?: Contact
+  address: Address;
+  contact: Contact
 }
 
 type NavItem = {
