@@ -24,9 +24,9 @@ export default function Footer() {
             Reserved.
           </span>
           <ul className="flex justify-center flex-wrap mt-4  md:mt-0 gap-5 rtl:space-x-reverse">
-            {siteConfig.links.map(({ href, ...link }) => (
+            {siteConfig.links.map(({ name, ...link }) => (
               <li key={name}>
-                <SocialLink href={href} {...link} />
+                <SocialLink {...link} />
               </li>
             ))}
           </ul>
