@@ -24,10 +24,10 @@ export default function Footer() {
             Reserved.
           </span>
           <ul className="flex justify-center flex-wrap mt-4  md:mt-0 gap-5 rtl:space-x-reverse">
-            {siteConfig.links.map(({ name, ...link }) => (
-              <li key={name}>
+            {siteConfig.links.map((link) => (
+              
                 <SocialLink {...link} />
-              </li>
+              
             ))}
           </ul>
         </div>
@@ -38,6 +38,7 @@ export default function Footer() {
 
 function SocialLink({ href, name, Icon, external }: LinkType) {
   return (
+    <li key={name}>
     <Link
       href={href}
       className={buttonVariants({ variant: "outline", size: "icon" })}
@@ -47,6 +48,7 @@ function SocialLink({ href, name, Icon, external }: LinkType) {
       {Icon && <Icon className="h-5 w-5 md:h-6 md:w-6" />}
       <span className="sr-only">{name}</span>
     </Link>
+    </li>
   );
 }
 
