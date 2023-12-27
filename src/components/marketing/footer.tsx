@@ -60,9 +60,9 @@ function FooterSection({ title, links, Icon }: FooterSection) {
         </h2>
       )}
       {links && (
-        <ul className="text-gray-500 dark:text-gray-400 font-medium">
+        <ul className="font-medium">
           {links.map(({ name, href, Icon, disabled }) => (
-            <li key={href+"-footer"} className="mb-2 flex gap-2">
+            <li key={href+"- footer"} className="mb-2 flex gap-2">
               {Icon && <Icon />}
               {
                 disabled && (<span className="text-muted-foreground/60 cursor-not-allowed">
@@ -72,7 +72,7 @@ function FooterSection({ title, links, Icon }: FooterSection) {
 
               {
               !disabled && (
-              <Link href={href} className="text-muted-foreground hover:underline">
+              <Link href={href} className="text-muted-foreground/90 hover:text-muted-foreground hover:underline">
                 {name}
               </Link>)
               }
