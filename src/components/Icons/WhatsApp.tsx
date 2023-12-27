@@ -3,14 +3,10 @@ import React from "react";
 
 const WhatsApp = ({ ...props }: LucideProps) => (
   <svg
-    className="w-6 h-6"
+    className="w-8 h-8"
     xmlns="http://www.w3.org/2000/svg"
-    x="0px"
-    y="0px"
-    width="100"
-    height="100"
-    viewBox="0 0 48 48"
-    fill="currentColor"
+    viewBox="0 0 24 24"
+    fill="white"
     strokeWidth={2}
     {...props}
   >
