@@ -8,7 +8,7 @@ export default function Footer() {
   if (!marketingConfig?.footer) return null;
 
   return (
-    <footer className="bg-background px-4 md:px-7 ">
+    <footer className="px-4 md:px-7 ">
       <div className="mx-auto w-full max-w-screen-xl">
         {marketingConfig.footer?.sections && (
           <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
@@ -24,9 +24,9 @@ export default function Footer() {
             Reserved.
           </span>
           <ul className="flex justify-center flex-wrap mt-4  md:mt-0 gap-5 rtl:space-x-reverse">
-            {siteConfig.links.map(({ name, href, Icon }) => (
+            {siteConfig.links.map(({ href, ...link }) => (
               <li key={name}>
-                <SocialLink href={href} name={name} Icon={Icon} />
+                <SocialLink href={href} {...link} />
               </li>
             ))}
           </ul>
@@ -44,7 +44,7 @@ function SocialLink({ href, name, Icon, external }: LinkType) {
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
     >
-      {Icon && <Icon className="h-4 w-4 md:h-6 md:w-6" />}
+      {Icon && <Icon className="h-5 w-5 md:h-6 md:w-6" />}
       <span className="sr-only">{name}</span>
     </Link>
   );
