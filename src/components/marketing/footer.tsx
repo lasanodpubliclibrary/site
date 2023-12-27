@@ -24,10 +24,8 @@ export default function Footer() {
             Reserved.
           </span>
           <ul className="flex justify-center flex-wrap mt-4  md:mt-0 gap-5 rtl:space-x-reverse">
-            {siteConfig.links.map((link) => (
-              
-                <SocialLink {...link} />
-              
+            {siteConfig.links.map((link) => (              
+             <SocialLink key={link.name} {...link} />              
             ))}
           </ul>
         </div>
@@ -38,7 +36,7 @@ export default function Footer() {
 
 function SocialLink({ href, name, Icon, external }: LinkType) {
   return (
-    <li key={name}>
+    <li>
     <Link
       href={href}
       className={buttonVariants({ variant: "outline", size: "icon" })}
