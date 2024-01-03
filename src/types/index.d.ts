@@ -1,12 +1,23 @@
-import { Icon } from ".";
-import { CustomIcon, Icon } from "@/components/Icons";
+import { Icon } from "@/components/Icons";
 
 interface Link {
   name: string;
   href: string;
-  Icon?: CustomIcon | Icon;
+  Icon?: Icon;
   external?: boolean;
   disabled?: boolean;
+}
+
+interface Address {
+  street: string;
+  city: string;
+  region: string;
+  postalCode: string;
+  country: string;
+}
+
+interface Contact {
+  telephone: string;
 }
 
 interface FooterSection {
@@ -15,14 +26,17 @@ interface FooterSection {
   links: Link[];
 }
 
+
 interface SiteConfig {
   name: string;
   shortName: string;
   description: string;
   url: string;
   ogImage: string;
-  Icon?: CustomIcon | Icon;
+  Icon?: Icon;
   links: Link[];
+  address: Address;
+  contact: Contact
 }
 
 type NavItem = {

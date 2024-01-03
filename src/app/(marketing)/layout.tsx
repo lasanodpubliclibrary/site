@@ -1,4 +1,4 @@
-import SiteFooter from "@/components/marketing/footer";
+import Footer from "@/components/marketing/footer";
 import Header from "@/components/marketing/header";
 
 interface MarketingLayoutProps {
@@ -15,7 +15,7 @@ export default async function MarketingLayout({
     >
       <Header />
       <main className="flex-1 p-3 md:p-6 ">{children}</main>
-      {/* <SiteFooter /> */}
+      <Footer />
     </div>
   );
 }
