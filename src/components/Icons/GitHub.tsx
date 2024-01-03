@@ -1,3 +1,5 @@
+import React from "react";
+
 import { LucideProps } from "lucide-react";
 
 const GitHub = (props: LucideProps) => (

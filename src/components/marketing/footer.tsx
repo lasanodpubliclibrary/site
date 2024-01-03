@@ -1,6 +1,6 @@
 import { siteConfig } from "@/config/site";
 import Link from "next/link";
-import { FooterSection, Link as LinkType } from "types";
+import { FooterSection, Link as LinkType } from "@/types";
 import { marketingConfig } from "../../config/marketing";
 import { buttonVariants } from "../ui/button";
 

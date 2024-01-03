@@ -1,0 +1,130 @@
+@import "~payload/scss";
+
+$breakpoint-xs-width: 400px !default;
+$breakpoint-s-width: 768px !default;
+$breakpoint-m-width: 1024px !default;
+$breakpoint-l-width: 1440px !default;
+
+$style-radius-s: 0.5rem - 4px !default;
+$style-radius-m: 0.5rem - 2px !default;
+$style-radius-l: 0.5rem !default;
+$style-stroke-width: 1px !default;
+
+:root {
+  --base-px: 20;
+  --base-body-size: 13;
+  --base: calc((var(--base-px) / var(--base-body-size)) * 1rem);
+
+  --breakpoint-xs-width: #{$breakpoint-xs-width};
+  --breakpoint-s-width: #{$breakpoint-s-width};
+  --breakpoint-m-width: #{$breakpoint-m-width};
+  --breakpoint-l-width: #{$breakpoint-l-width};
+  --scrollbar-width: 17px;
+
+  --theme-bg: hsl(0, 0%, 100%);
+  --theme-input-bg: var(--theme-elevation-0);
+  --theme-text: hsl(222.2 84% 4.9%);
+  --theme-overlay: rgba(5, 5, 5, 0.5);
+  --theme-baseline: #{$baseline-px};
+  --theme-baseline-body-size: #{$baseline-body-size};
+  --font-body: var(--font-sans), "Suisse Intl", system-ui;
+  --font-mono: monospace;
+  --font-serif: "Merriweather", serif;
+
+  --style-radius-s: #{$style-radius-s};
+  --style-radius-m: #{$style-radius-m};
+  --style-radius-l: #{$style-radius-l};
+
+  --z-popup: 10;
+  --z-nav: 20;
+  --z-modal: 30;
+  --z-status: 40;
+
+  --accessibility-outline: 2px solid var(--theme-text);
+  --accessibility-outline-offset: 2px;
+
+  --gutter-h: #{base(3)};
+  --spacing-view-bottom: var(--gutter-h);
+  --app-header-height: calc(var(--base) * 3);
+  --doc-controls-height: calc(var(--base) * 3);
+  --nav-width: 275px;
+  --nav-trans-time: 150ms;
+
+  @include mid-break {
+    --gutter-h: #{base(2)};
+    --app-header-height: calc(var(--base) * 2);
+    --doc-controls-height: calc(var(--base) * 2.5);
+  }
+
+  @include small-break {
+    --gutter-h: #{base(0.5)};
+    --spacing-view-bottom: calc(var(--base) * 2);
+    --nav-width: 100vw;
+  }
+}
+
+/////////////////////////////
+// GLOBAL STYLES
+/////////////////////////////
+
+html {
+  @extend %body;
+  background: var(--theme-bg);
+  -webkit-font-smoothing: antialiased;
+
+  &[data-theme="dark"] {
+    --theme-bg: hsl(222.2 84% 4.9%);
+    --theme-text: hsl(210 40% 98%);
+    --theme-input-bg: var(--theme-elevation-50);
+    --theme-overlay: rgba(5, 5, 5, 0.75);
+    color-scheme: dark;
+
+    ::selection {
+      color: var(--color-base-1000);
+    }
+
+    ::-moz-selection {
+      color: var(--color-base-1000);
+    }
+  }
+
+  @include mid-break {
+    font-size: 12px;
+  }
+}
+
+body {
+  font-family: var(--font-sans), var(--font-body);
+  font-weight: 400;
+  color: var(--theme-text);
+  margin: 0;
+  // this is for the nav to be able to push the document over
+  overflow-x: hidden;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: colors 0.15s ease-in-out;
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--ring-color), 0 0 0 2px var(--ring-offset-color);
+  }
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &--style-primary {
+    background-color: var(--primary-color);
+    color: var(--primary-foreground-color);
+    &:hover {
+      background-color: rgba(var(--primary-color), 0.9);
+    }
+  }
+}

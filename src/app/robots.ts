@@ -1,3 +1,4 @@
+import { siteConfig } from "@/config/site";
 import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
@@ -6,5 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
+    host: siteConfig.url,
   };
 }

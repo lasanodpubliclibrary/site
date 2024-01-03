@@ -14,7 +14,7 @@ export default async function MarketingLayout({
       vaul-drawer-wrapper=""
     >
       <Header />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 p-3 md:p-6 ">{children}</main>
       {/* <SiteFooter /> */}
     </div>
   );

@@ -58,11 +58,23 @@
   }
 }
 
+@layer components {
+  .heading {
+    @apply text-2xl lg:text-4xl font-heading text-balance;
+  }
+}
+
 @layer utilities {
-  .h-screen-dvh {
+  .h-full-dvh {
     height: 100vh;
     height: 100dvh;
   }
+
+  .min-h-full-dvh {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
   .text-balance {
     text-wrap: balance;
   }

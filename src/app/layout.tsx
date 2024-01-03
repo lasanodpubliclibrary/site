@@ -1,21 +1,22 @@
 import "@/styles/globals.css";
 
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-
+import NextTopLoader from "nextjs-toploader";
 import { fontHeading, inter } from "@/app/ui/fonts";
 import { siteConfig } from "@/config/site";
-
-import { TailwindIndicator } from "@/components/marketing/tailwindcss-inficator";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Providers as TRPCProviders } from "../contexts/trpc-providers";
+import { Toaster } from "@/components/ui/sonner";
+import { TailwindIndicator } from "@/components/shared/tailwindcss-indicator";
+import { ThemeProvider } from "@/contexts/theme-provider";
 import { cn } from "@/lib/utils";
 import type { Metadata, Viewport } from "next";
-import { ThemeProvider } from "@/components/shared/theme-provider";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
+    template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
   openGraph: {
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#3bc4f1" },
+    { media: "(prefers-color-scheme: light)", color: "#00B0FF" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
 };
@@ -78,15 +79,33 @@ export default function RootLayout({ children }: RootLayoutProps) {
           fontHeading.variable
         )}
       >
-        <main className="relative w-full min-h-screen">
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
+        <main className="relative w-full min-h-full-dvh">
+          <TRPCProviders>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
+          </TRPCProviders>
+          <NextTopLoader
+            color="#3CC3F2"
+            initialPosition={0.08}
+            crawlSpeed={200}
+            height={3}
+            crawl={true}
+            showSpinner={false}
+            easing="ease"
+            speed={200}
+            shadow="0 0 10px #2299DD,0 0 5px #2299DD"
+            template='<div class="bar" role="bar"><div class="peg"></div></div> 
+  <div class="spinner" role="spinner"><div class="spinner-icon"></div></div>'
+            zIndex={1600}
+            showAtBottom={false}
+          />
+          <Toaster position="top-center" richColors />
           <TailwindIndicator />
           <Analytics />
           <SpeedInsights />

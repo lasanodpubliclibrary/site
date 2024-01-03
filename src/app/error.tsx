@@ -5,12 +5,12 @@ import Link from "next/link";
 
 const ErrorPage = () => {
   return (
-    <section className="w-full custom-h-full  px-4 py-11 flex flex-col items-center justify-center">
+    <section className="w-full custom-h-full bg-background px-4 py-11 flex flex-col items-center justify-center">
       <div className="text-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1024 768"
-          className="w-auto h-56 mx-auto  text-primary blue-600 sm:h-64"
+          className="w-auto h-56 mx-auto  text-primary  blue-600 sm:h-64"
         >
           <g fill="none" fillRule="evenodd">
             <g fill="fill-blue-600">
@@ -26,12 +26,12 @@ const ErrorPage = () => {
           </g>
         </svg>
 
-        <h1 className="mt-6 text-2xl font-bold tracking-tight sm:text-4xl">
+        <h1 className="mt-6 text-2xl font-heading tracking-tight sm:text-4xl">
           Uh-oh!
         </h1>
         <p className="mt-4 ">Something went wrong!</p>
         <div className="mt-6">
-          <Link href="/" className={buttonVariants({ className: "u" })}>
+          <Link href="/" className={buttonVariants({ className: "uppercase" })}>
             Back to Homepage &nbsp; <span aria-hidden="true"> &rarr;</span>
           </Link>
         </div>

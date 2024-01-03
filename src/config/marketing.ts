@@ -1,4 +1,4 @@
-import { MarketingConfig } from "types";
+import { MarketingConfig } from "@/types";
 import { siteConfig } from "./site";
 
 export const marketingConfig: MarketingConfig = {

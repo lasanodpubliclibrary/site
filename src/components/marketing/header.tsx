@@ -12,7 +12,7 @@ export default function Header() {
       <MainNav items={marketingConfig.mainNav} />
       <nav className="hidden md:flex items-start gap-6 px-4">
         <Link
-          href="/sign-up"
+          href="/sign-in"
           className={cn(buttonVariants({ variant: "secondary", size: "sm" }))}
         >
           Sign in

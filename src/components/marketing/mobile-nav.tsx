@@ -3,7 +3,7 @@ import Link from "next/link";
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
-import { MainNavItem } from "types";
+import { MainNavItem } from "@/types";
 import { ModeToggle } from "../shared/mode-toggle";
 
 interface MobileNavProps {

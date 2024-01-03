@@ -1,6 +1,5 @@
 import { LucideProps } from "lucide-react";
 import React from "react";
-import { Icon } from ".";
 
 const Discord = ({ ...props }: LucideProps) => (
   <svg

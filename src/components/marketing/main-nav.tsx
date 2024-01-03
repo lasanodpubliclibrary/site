@@ -9,10 +9,9 @@ import { Drawer } from "vaul";
 
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
-import { MainNavItem } from "types";
+import { MainNavItem } from "@/types";
 import { Close, Heart, Menu } from "../Icons";
 import LogoWithName from "../shared/LogoWithName";
-import { ModeToggle } from "../shared/mode-toggle";
 import { Button, buttonVariants } from "../ui/button";
 
 const DynamicMobileNav = dynamic(
@@ -45,7 +44,7 @@ export default function MainNav({ items, children }: MainNavProps) {
               key={index}
               href={item.disabled ? "#" : item.href}
               className={cn(
-                "w-fit flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm",
+                "w-fit whitespace-normal flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm",
                 item.href.startsWith(`/${segment}`)
                   ? "text-foreground"
                   : "text-foreground/60",

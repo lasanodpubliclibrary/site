@@ -7,8 +7,8 @@ import {
   WhatsApp,
   Discord,
   Logo,
-} from "@/components/Icons";
-import { SiteConfig } from "types";
+} from "../components/Icons";
+import { SiteConfig } from "@/types";
 
 /*
  if you change the name, shortname, url of the site, you must also change it in the following files:
@@ -22,7 +22,7 @@ export const siteConfig: SiteConfig = {
   description:
     "Las Anod Public Library is your gateway to books, blogs, community discussions, and a marketplace for new or used books. Explore and join us today!",
   url: "https://www.laascaanood.co",
-  ogImage: "https://www.laaascaanood.co/opengraph.png",
+  ogImage: "/opengraph.png",
   Icon: Logo,
   links: [
     {
