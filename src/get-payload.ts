@@ -4,8 +4,6 @@ import type { Payload } from "payload";
 import payload from "payload";
 import type { InitOptions } from "payload/config";
 
-import { seed as seedData } from "./seed";
-
 import email from "./payload/email/transport";
 
 dotenv.config({
@@ -47,10 +45,6 @@ export const getPayloadClient = async ({
   try {
     process.env.PAYLOAD_DROP_DATABASE = seed ? "true" : "false";
     cached.client = await cached.promise;
-
-    if (seed) {
-      await seedData(payload);
-    }
   } catch (e: unknown) {
     cached.promise = null;
     throw e;
