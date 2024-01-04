@@ -40,17 +40,6 @@ const start = async (): Promise<void> => {
     seed: process.env.PAYLOAD_PUBLIC_SEED === "true",
   });
 
-  if (process.env.NEXT_BUILD) {
-    app.listen(PORT, async () => {
-      payload.logger.info(`Next.js is now building...`);
-      // @ts-expect-error
-      await nextBuild(path.join(__dirname, ".."));
-      process.exit();
-    });
-
-    return;
-  }
-
   app.use(
     "/api/trpc",
     trpcExpress.createExpressMiddleware({
@@ -61,6 +50,24 @@ const start = async (): Promise<void> => {
 
   app.use((req, res) => nextHandler(req, res));
 
+  if (process.env.NEXT_BUILD) {
+    
+    nextApp.prepare().then(() => {
+      payload.logger.info(`Next.js is now starting (production)...`);   
+      app.listen(PORT, async () => {
+      payload.logger.info(`Next.js is now building...`);
+      // @ts-expect-error
+      await nextBuild(path.join(__dirname, ".."));
+      process.exit();
+     });
+
+    })
+    
+
+    return;
+  }
+
+  
   nextApp.prepare().then(() => {
     payload.logger.info("Next.js started");
 
