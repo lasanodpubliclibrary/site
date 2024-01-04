@@ -34,11 +34,11 @@ const storageAdapter = s3Adapter({
 
 export default buildConfig({
   serverURL: process.env.next_PUBLIC_SERVER_URL || "",
-  buildPath: path.resolve(process.cwd(), 'dist'),
   collections: [Users, Events, Media],
   admin: {
     user: Users.slug,
     bundler: webpackBundler(),
+    buildPath: path.resolve(process.cwd(), 'dist'),
     meta: {
       titleSuffix: ` - ${siteConfig.name}`,
       favicon: "/favicon.ico",
