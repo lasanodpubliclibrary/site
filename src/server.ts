@@ -28,6 +28,16 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const start = async (): Promise<void> => {
+  app.use(
+    "/api/trpc",
+    trpcExpress.createExpressMiddleware({
+      router: appRouter,
+      createContext,
+    })
+  );
+
+  app.use((req, res) => nextHandler(req, res));
+
   const payload = await getPayloadClient({
     initOptions: {
       express: app,
@@ -39,16 +49,7 @@ const start = async (): Promise<void> => {
     },
     seed: process.env.PAYLOAD_PUBLIC_SEED === "true",
   });
-
-  app.use(
-    "/api/trpc",
-    trpcExpress.createExpressMiddleware({
-      router: appRouter,
-      createContext,
-    })
-  );
-
-  app.use((req, res) => nextHandler(req, res));
+  
 
   if (process.env.NEXT_BUILD) {
     
@@ -57,6 +58,10 @@ const start = async (): Promise<void> => {
     payload.logger.info(`Next.js is now building...`);
       // @ts-expect-error
       await nextBuild(path.join(__dirname, ".."));
+
+      payload.logger.info(
+        `Next.js App URL: ${process.env.NEXT_PUBLIC_SERVER_URL}`
+      );
       process.exit();
     });
 
