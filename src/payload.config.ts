@@ -35,6 +35,10 @@ const storageAdapter = s3Adapter({
 export default buildConfig({
   serverURL: process.env.next_PUBLIC_SERVER_URL || "",
   collections: [Users, Events, Media],
+  routes: {
+   admin: "/dashboard",
+  },
+  telemetry: false,
   admin: {
     user: Users.slug,
     bundler: webpackBundler(),
