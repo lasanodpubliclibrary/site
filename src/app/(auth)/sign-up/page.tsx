@@ -36,7 +36,7 @@ export default async function Signup() {
 
       <section className="mb-7">
         <h1 className=" mb-1 text-2xl font-semibold">Create Your Account</h1>
-        <p className="text-neutral-900 font-light">
+        <p className="text-muted-foreground font-light">
           to continue to{" "}
           <strong className="font-[500]">{siteConfig.name}.</strong>
         </p>
