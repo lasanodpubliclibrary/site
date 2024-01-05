@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Event } from "@/types/payload-types";
-import Moment from "../shared/moment";
+//import Moment from "../shared/moment";
 
 export default function SmallEvent({ title, description, date }: Event) {
   return (
@@ -18,7 +18,7 @@ export default function SmallEvent({ title, description, date }: Event) {
           Lorem ipsum dolor, sit amet consectetur adipisicing elit.
         </h2>
         <div className="flex text-sm flex flex-wrap divide-x-2 gap-x-2  md:flex-row text-muted-foreground">
-          <Moment date={date} format="DD-mm-yyyy" className="pr-2 " />
+          {/*<Moment date={date} format="DD-mm-yyyy" className="pr-2 " />*/}
           <p className="px-2 pr-2">The Library hall</p>
         </div>
         <p className="line-clamp-3 text-sm text-muted-foreground leading-snug">
