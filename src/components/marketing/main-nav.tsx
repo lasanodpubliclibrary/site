@@ -1,12 +1,12 @@
 "use client";
 
-import dynamic from "next/dynamic";
+//import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
 import * as React from "react";
 
 import { Drawer } from "vaul";
-
+import MobileNav from "@/components/marketing/mobile-nav"
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { MainNavItem } from "@/types";
@@ -14,12 +14,12 @@ import { Close, Heart, Menu } from "../Icons";
 import LogoWithName from "../shared/LogoWithName";
 import { Button, buttonVariants } from "../ui/button";
 
-const DynamicMobileNav = dynamic(
+/*const DynamicMobileNav = dynamic(
   () => import("@/components/marketing/mobile-nav"),
   {
     ssr: false,
   }
-);
+);*/
 
 interface MainNavProps {
   items?: MainNavItem[];
@@ -126,9 +126,9 @@ export default function MainNav({ items, children }: MainNavProps) {
         </Button>
       </div>
       {showMobileMenu && items && (
-        <DynamicMobileNav items={items} handleClose={handleClose}>
+        <MobileNav items={items} handleClose={handleClose}>
           {children}
-        </DynamicMobileNav>
+        </MobileNav>
       )}
     </div>
   );
