@@ -42,7 +42,7 @@ export default async function SignIn() {
 
       <section className="mb-9">
         <h1 className=" mb-1 text-2xl font-semibold">Sign in</h1>
-        <p className="text-neutral-900 font-light">
+        <p className="text-muted-foreground font-light">
           to continue to&nbsp;
           <strong className="font-[500]">{siteConfig.name}.</strong>
         </p>
