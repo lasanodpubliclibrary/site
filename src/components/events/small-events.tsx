@@ -19,7 +19,9 @@ export default function SmallEvents() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
   return (
     <div className="relative flex flex-col gap-5 md:gap-0 md:flex-row ">
-      <div className="flex md:w-2/5 justify-center items-center md:items-start p-7">
+     
+     <h2 className="font-semibold md:text-lg tracking-tight">Upcoming events</h2>
+     <div className="flex md:w-2/5 justify-center items-center md:items-start p-7">
         <Calendar
           mode="single"
           selected={date}
