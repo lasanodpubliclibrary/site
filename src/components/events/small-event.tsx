@@ -15,9 +15,9 @@ export default function SmallEvent({ title, description, date }: Event) {
       />
       <div className="space-y-1">
         <p className="font-medium text-[#00b0ff] tracking-tight leading-none">For all ages</p>
-        <h2 className="md:text-xl font-semibold line-clamp-2 leading-none tracking-tight">
+        <h3 className="md:text-xl font-semibold line-clamp-2 leading-none tracking-tight">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-        </h2>
+        </h3>
         <div className="flex text-sm  flex-wrap divide-x-2 gap-x-2  md:flex-row text-muted-foreground">
           <Moment date={date} format="DD-mm-yyyy" className="pr-2"/>
           <p className="pl-2">3:30 AM</p>
